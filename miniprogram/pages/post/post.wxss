@@ -1,0 +1,37 @@
+/* 容器：给页面一点留白 */
+.container {
+  padding: 30rpx;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+/* 标题输入框：加上白色背景和圆角 */
+.title-input {
+  width: 100%;
+  height: 80rpx;
+  background: #fff3ff;
+  border: 1rpx solid #767676;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box; /* 确保 padding 不撑大框 */
+}
+
+/* 感悟输入框：设置高度 */
+.content-input {
+  width: 100%;
+  height: 300rpx;
+  background: #ffffff;
+  border: 1rpx solid #dddddd;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  margin-bottom: 40rpx;
+  box-sizing: border-box;
+}
+
+/* 发表按钮：微信绿 */
+.submit-btn {
+  width: 100% !important;
+  background-color: #07c160 !important;
+  color: white;
+}
