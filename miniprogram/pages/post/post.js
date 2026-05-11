@@ -1,66 +1,48 @@
 // pages/Post.js
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    inputText:''
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  // 1. 监听输入框打字：每次用户打字，把字更新到 inputText 里
+  onInput(e){
+    this.setData({
+      inputText:e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
+  // 2.点击发布按钮：把抓到的文字打印在控制台上
+  submitPost(){
 
-  },
+    const content = this.data.inputText;
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
+    if(!content.trim()){
+      wx.showToast({
+        title:'写点什么再发布吧～',
+        icon:'none'
+      })
+      return
+    }
 
-  },
+    wx.showLoading({ title: '发布中' });
+    db.collection('posts').add({
+      data:{
+        content:content,
+        createTime: new Date()
+      }
+    }).then(res=>{
+      wx.hideLoading();
+      this.setData({inputText:''});
+    }).catch(err=>{
+      wx.hideLoading();
+      console.error("数据库错误为：",err);
+    })
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
+    console.log('后台捕获成功，用户输入的是：',content)
+    }
 })

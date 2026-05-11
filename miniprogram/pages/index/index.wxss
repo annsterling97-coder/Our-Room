@@ -1,0 +1,73 @@
+/* pages/index/index.wxss */
+/* pages/index/index.wxss */
+.container {
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.post-card {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.user-info image{
+  width:60rpx;
+  height: 60rpx; /* 限制高度，必须和宽度一致才能成正方形 */
+  border-radius: 50%; /* 变成完美的圆形 */
+  margin-right: 15rpx; /* 离昵称远一点 */
+  background-color: #eee; /* 在图片加载出来前，先显示一个淡淡的灰色底 */
+}
+
+.avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: #eee;
+  margin-right: 15rpx;
+}
+
+.nickname {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.post-content {
+  font-size: 30rpx;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* 悬浮按钮样式 */
+.fab-btn {
+  position: fixed;
+  right: 40rpx;
+  bottom: 80rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #07c160;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60rpx;
+  box-shadow: 0 4rpx 20rpx rgba(7,193,96,0.3);
+}

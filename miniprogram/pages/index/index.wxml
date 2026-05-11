@@ -1,0 +1,17 @@
+<!--pages/index/index.wxml-->
+<scroll-view scroll-y class="container">
+  <view class="post-card" wx:for="{{postList}}" wx:key="_id">
+    <view class="post-header">
+      <view class="user-info">
+        <image class="avatar" src="/images/p408538325.jpg"></image>
+        <text class="nickname">匿名用户</text>
+      </view>
+      <text class="time">{{item.displayTime}}</text>
+    </view>
+    <view class="post-content">
+      <text>{{item.content}}</text>
+    </view>
+  </view>
+
+  <view class="fab-btn" bindtap="goToPost">+</view>
+</scroll-view>

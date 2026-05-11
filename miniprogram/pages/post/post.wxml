@@ -1,13 +1,13 @@
 <!--pages/Post.wxml-->
-<view class = "container">
-  <input class="title-input" placeholder="输入书名或影名：" bindinput="onTitleInput"/>
+<view class ="container">
+  <textarea
+      placeholder = "今天分享点什么呢..."
+      bindinput="onInput"
+      class="input-box"
+  />
 
-  <textarea class ="content-input" placeholder="分享你的感悟：" bindinput="onContentInput"></textarea>
+  <button type = "primary" bindtap="submitPost" class = "submit-btn">
+    发布
+  </button>
 
-  <view class="image-picker" bindtap="chooseImage">
-    <text>+ 添加图片</text>
-    <text></text>
-  </view>
-
-  <button type = "primary" class = "submit-btn" bindtap="submitPost">发表</button>
 </view>
